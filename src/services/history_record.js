@@ -32,9 +32,7 @@ module.exports={
     },
     insert: async function (HistoryRecordMap) {
         try {
-            console.log(HistoryRecordMap);
             let result = await  HistoryRecord.create(HistoryRecordMap)
-            console.log(result.toObject());
             return result.toObject()
         } catch (error) {
             return error
