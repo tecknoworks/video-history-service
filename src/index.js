@@ -7,8 +7,9 @@ const logger = require('morgan');
 
 const router = require('./api/router')
 const port = 3005
+const config = require("./config");
 
-mongoose.connect('mongodb://localhost:27017/history', { useNewUrlParser: true,  useFindAndModify: false  })
+mongoose.connect(config.databaseUrl, { useNewUrlParser: true,  useFindAndModify: false  })
 
 app.use(cors())
 app.use(bodyParser.json())
